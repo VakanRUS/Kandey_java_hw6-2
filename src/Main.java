@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 class Homework {
     public static void main(String[] args) { // Метод main
         task1();
@@ -14,7 +15,7 @@ class Homework {
 
     public static void task2() {
         System.out.println("task 2");
-        int currentYear = 2022;
+        int currentYear = LocalDate.now().getYear();
         String osName = "Android";
         osVersion(osNumber(osName), currentYear);
         System.out.println();
@@ -23,8 +24,8 @@ class Homework {
     public static void task3() {
         System.out.println("task 3");
         int deliveryDistance = 95;
-        if (typeOfDelivery(deliveryDistance) > 0) {
-            System.out.println("Потребуется дней: " + typeOfDelivery(deliveryDistance));
+        if (calculateDeliveryDays(deliveryDistance) > 0) {
+            System.out.println("Потребуется дней: " + calculateDeliveryDays(deliveryDistance));
         } else {
             System.out.println("Доставки нет");
         }
@@ -63,7 +64,7 @@ class Homework {
         }
     }
 
-    public static int typeOfDelivery(int distance) {
+    public static int calculateDeliveryDays(int distance) {
         if (distance < 20) {
             return  1;
         } else if (distance > 20 && distance < 60) {
